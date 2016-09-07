@@ -94,7 +94,7 @@ public class Main {
 
     private static boolean testFour(String testString) {
 
-        Pattern p = Pattern.compile("([0,2,4,6,8][1,3,5,7,9])+|([1,3,5,7,9][0,2,4,6,8])+");
+        Pattern p = Pattern.compile("\\d|([0,2,4,6,8][1,3,5,7,9]([0,2,4,6,8])?)+|([1,3,5,7,9][0,2,4,6,8]([1,3,5,7,9])?)+");
         Matcher m = p.matcher(testString);
         return m.matches();
     }
