@@ -1,0 +1,4 @@
+0      2016-09-15 12:51:12,400 INFO             ru.itis2016.ServletCalculator  - Text that was added to session: null
+21     2016-09-15 12:51:12,421 INFO             ru.itis2016.ServletCalculator  - mathAction that was added to session: null
+57856  2016-09-15 12:52:10,256 INFO             ru.itis2016.ServletCalculator  - Text that was added to session: null
+57859  2016-09-15 12:52:10,259 INFO             ru.itis2016.ServletCalculator  - mathAction that was added to session: null

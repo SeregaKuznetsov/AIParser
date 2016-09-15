@@ -1,0 +1,2 @@
+0      2016-09-09 13:58:05,975 INFO            ru.itis2016.TestEncodinServlet  - Text that was added to session: null
+10636  2016-09-09 13:58:16,611 DEBUG           ru.itis2016.TestEncodinServlet  - Cookies added rrgrdg
