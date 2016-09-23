@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <!-- Bootstrap -->
+    <script src="js/validatescript.js"></script>
+    <link href="css/jumboron.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+<form action="test" method="post" name="myForm" class="form-signin">
+    <div class="container">
+        <div class="row">
+            <div class="span2">
+                <h1>Let's play a game...</h1>
+            </div>
+            <div class="span10">
+                <div class="form-group">
+                    <input type="text" name="text" id="text" class="form-control" placeholder="Digit">
+                </div>
+                <div class="buttons">
+                    <button type= "button" id="addition" class="btn btn-primary btn-lg" name= mathAction value = addition onclick="myAjax(document.forms['myForm']['text'].value, document.forms['myForm']['addition'].value)">+</button>
+                    <button type= "button" id="subtraction" class="btn btn-primary btn-lg" name= mathAction value = subtraction onclick="myAjax(document.forms['myForm']['text'].value, document.forms['myForm']['subtraction'].value)">-</button>
+                    <button type= "button" id="multiplication" class="btn btn-primary btn-lg" name= mathAction value = multiplication onclick="myAjax(document.forms['myForm']['text'].value, document.forms['myForm']['multiplication'].value)">*</button>
+                    <button type= "button" id="division" class="btn btn-primary btn-lg" name= mathAction value = division onclick="myAjax(document.forms['myForm']['text'].value, document.forms['myForm']['division'].value)">/</button>
+                    <button type= "button" id="equally" class="btn btn-info btn-lg" name= mathAction value = equally onclick="myAjax(document.forms['myForm']['text'].value, document.forms['myForm']['equally'].value)">=</button>
+                </div>
+
+            </div>
+            <div id="result" class="history"></div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.js"></script>
+
+    <script>
+
+    $('form').validate({
+        onkeyup: false,
+        rules: {
+            text: {
+                required: true,
+                regexp: '^-?[0-9]+([.,]?)[0-9]*$'
+            }
+        },
+        messages: {
+            text: {
+                required: "Enter the number!",
+                regexp: "Need only numbers!"
+            }
+        }
+    });
+
+    $.validator.addMethod('regexp', function(value, element, regexp) {
+                var re = new RegExp(regexp);
+                return this.optional(element) || re.test(value);
+            },
+            "Please check your input."
+    );
+
+</script>
+
+</body>
+</html>
