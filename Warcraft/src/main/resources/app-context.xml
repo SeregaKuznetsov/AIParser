@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="ember"
+          class="interfaces.impl.Ember">
+        <constructor-arg ref="bladeMail"/>
+        <constructor-arg ref="Daedalus"/>
+
+        <!--<property name="cpu" ref="intelCPU"/>-->
+        <!--<property name="memory" ref="kingstonMemory"/>-->
+        <!--<property name="hardDrive" ref="wdHardDrive"/>-->
+    </bean>
+
+    <bean id="bladeMail" class="interfaces.impl.BladeMail" />
+    <bean id="Daedalus" class="interfaces.impl.Daedalus" />
+
+</beans>
