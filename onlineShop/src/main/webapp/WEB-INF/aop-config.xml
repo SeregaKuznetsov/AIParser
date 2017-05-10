@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:config>
+        <aop:pointcut id="logging" expression="@annotation(annotation.Logging)"/>
+        <aop:pointcut id="serviceLog" expression="execution(* service.*.*(..))"/>
+        <aop:pointcut id="repositoryLog" expression="execution(* repository.*.*(..))"/>
+        <aop:aspect ref="serviceAspect">
+            <aop:around method="logging" pointcut-ref="logging"/>
+            <aop:around method="log" pointcut-ref="repositoryLog"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="serviceAspect" class="aop.Aspect"/>
+
+</beans>

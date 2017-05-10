@@ -1,0 +1,21 @@
+body{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+}
+#field_name{
+    text-align: center;
+    font-size: 22px;
+    margin: 15px 0 10px 0;
+}
+.textline{
+    text-align: center;
+    font-size: 20px;
+    margin: 15px 0 10px 0;
+}
+.bold{
+    font-weight:bold
+}
+.center{
+    text-align: center;
+}
